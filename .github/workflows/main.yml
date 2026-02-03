@@ -1,10 +1,11 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
+  push:
+    branches-ignore:
+      # push events to main branch occur after PRs are merged, when the same checks were run
+      - main
   workflow_dispatch:
 
 jobs:
